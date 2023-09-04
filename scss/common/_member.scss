@@ -1,0 +1,107 @@
+.member{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    h2{
+        position: relative;
+        left: 38%;
+        top: 10%;
+        font: bold 100px/1 "arial";
+    }
+    .on{
+       display: flex;
+       justify-content: center;
+       position: relative;
+       left: 50px;
+       top: 30%;
+       transform: scale(1.5);
+       filter: grayscale(1);
+
+       
+    }
+
+    .onnew{
+        position: absolute;
+        top: 243%;
+        left: 29.5%;;
+        z-index: 3;
+        transform: scale(1.5);
+        filter: grayscale(1);
+        transition: 1s;
+    
+        &:hover{
+            filter: none;
+        }
+
+    
+    }
+
+    .jjong{
+        position: absolute;
+        top: 244.3%;
+        left: 39.2%;
+         z-index: 3;
+         transform: scale(1.5);
+         filter: grayscale(1);
+        transition: 1s;
+        &:hover{
+            filter: none;
+        }
+
+        
+    
+    }
+
+    .taem{
+        position: absolute;
+        top: 240.5%;
+        left: 46.9%;
+         z-index: 3;
+         transform: scale(1.5);
+         filter: grayscale(1);
+        transition: 1s;
+        &:hover{
+            filter: none;
+        }
+
+    
+    }
+
+    .minho{
+        position: absolute;
+        top: 244.1%;
+        left: 58.4%;;
+         z-index: 3;
+         transform: scale(1.5);
+         filter: grayscale(1);
+        transition: 1s;
+        &:hover{
+            filter: none;
+        }
+
+        
+     
+    }
+
+    .keybum{
+        position: absolute;
+        top: 243%;
+        left: 68%;
+         z-index: 3;
+         transform: scale(1.5);
+         filter: grayscale(1);
+        transition: 1s;
+        &:hover{
+            filter: none;
+        }
+
+       
+    }
+
+    &.on{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+
