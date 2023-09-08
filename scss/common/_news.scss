@@ -6,7 +6,7 @@ figure {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-color: #eee;
+    background-color: #fff;
     
     h1{
         position: relative;
@@ -302,6 +302,8 @@ figure {
             opacity: 0;
             transform: translateX(-100px);
             transition: 0.5s 0.8s;
+
+            //nth 타입 그걸로 ..??? 다 따로 하려면 어캐허너
         }
 
         .close {

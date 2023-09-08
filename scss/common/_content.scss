@@ -69,12 +69,17 @@
 
                 .title{
                     display: block;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
                 }
                 img{
                     position: relative;
                     width: 100px;
                     height: 100px;
                     margin: 5px;
+                   
                 }
 
                 p {

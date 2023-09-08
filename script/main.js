@@ -196,6 +196,27 @@ close.addEventListener("click", () => {
 })
 
 //--------------------------------------------------맴버소개
+//그 기업레이아웃도 만들어둔거 왼쪽에 보냈다가 오른쪽으로 꺼낸거니까(아마도)
+//대충 만들고 복붙한다음에 이벤트 줘야하나  
+//고민인게 그거임 하나하나 만들면 효율성 떨어져보이기도하고 은근 노가다인데
+// 사진 쓰는게 너무 적나라함 그래서 다른 사진 갖고온다는건데 좀많이막막하냐
+// &::before {
+//     content: '';
+//     display: block;
+//     width: 80%;
+//     height: 95%;
+//     position: absolute;
+//     top: 0;
+//     left: -200px;
+//     opacity: 0;
+//     background-color: #444;
+//     transition: 1s;
+
+// }
+
+
+
+
 
 //-------------------------역사
 // let sections = document.querySelectorAll("community");
