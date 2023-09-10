@@ -1,112 +1,192 @@
 .member{
-    width: 100%;
-    height: 100vh;
-    // overflow: hidden;
-    h2{
-        position: relative;
-        left: 38%;
-        top: 10%;
-        font: bold 100px/1 "arial";
-    }
-    // .on{
-    //    display: flex;
-    //    justify-content: center;
-    //    position: relative;
-    //    left: 50px;
-    //    top: 30%;
-    //    transform: scale(1.5);
-    //    filter: grayscale(1);
+        width: 100%;
+        height: 90vh;
+        .mem{
+            // width: 100%;
+            // height: 90vh;
+        // overflow: hidden;
+        width: 100%;
+        height: 90vh;
+        h2{
+            position: relative;
+            left: 38%;
+            top: 10%;
+            font: bold 100px/1 "arial";
+        }
+        // .on{
+        //    display: flex;
+        //    justify-content: center;
+        //    position: relative;
+        //    left: 50px;
+        //    top: 30%;
+        //    transform: scale(1.5);
+        //    filter: grayscale(1);
+    
+           
+        // }
 
        
-    // }
+        .onnew{
+            position: absolute;
+            top: 243%;
+            left: 29.5%;;
+            z-index: 3;
+            transform: scale(1.5);
+            filter: grayscale(1);
+            transition: 1s;
+            
+            P{
+                opacity: 0;
+            }
+         
+        
+            &:hover{
+                filter: none;
+            }
+            
+        
+    
+        
+        }
+    
+        .jjong{
+            position: absolute;
+            top: 244.3%;
+            left: 39.2%;
+             z-index: 3;
+             transform: scale(1.5);
+             filter: grayscale(1);
+            transition: 1s;
+            P{
+                opacity: 0;
+            }
+    
+    
+            &:hover{
+                filter: none;
+            }
+    
+            
+        
+        }
+    
+        .taem{
+            position: absolute;
+            top: 240.5%;
+            left: 46.9%;
+             z-index: 3;
+             transform: scale(1.5);
+             transition: 1s;
+             filter: grayscale(1);
+             P{
+                opacity: 0;
+            }
+            &:hover{
+                filter: none;
+            }
+    
+        
+        }
+    
+        .minho{
+            position: absolute;
+            top: 244.1%;
+            left: 58.4%;;
+             z-index: 3;
+             transform: scale(1.5);
+             filter: grayscale(1);
+            transition: 1s;
 
-    .onnew{
+            P{
+                opacity: 0;
+
+            }
+            &:hover{
+                filter: none;
+            }
+    
+            
+         
+        }
+    
+        .key{
+            position: absolute;
+            top: 243%;
+            left: 68%;
+             z-index: 3;
+             transform: scale(1.5);
+             filter: grayscale(1);
+            transition: 1s;
+
+            P{
+                opacity: 0;
+            }
+            &:hover{
+                filter: none;
+            }
+    
+           
+        }
+    
+        &.on{
+            opacity: 1;
+            left: 0;
+        }
+    }
+    aside {
+        width: 100%;
+        height: 100vh;
         position: absolute;
-        top: 243%;
-        left: 29.5%;;
+        top: 200%;
+        left: -100%;
+        opacity: 0;
+        padding: 20vh 7vw 14vh 20vw;
         z-index: 3;
-        transform: scale(1.5);
-        filter: grayscale(1);
+        display: flex;
+        justify-content: space-between;
         transition: 1s;
-     
-    
-        &:hover{
-            filter: none;
-        }
-
-    
-    }
-
-    .jjong{
-        position: absolute;
-        top: 244.3%;
-        left: 39.2%;
-         z-index: 3;
-         transform: scale(1.5);
-         filter: grayscale(1);
-        transition: 1s;
-   
-
-
-        &:hover{
-            filter: none;
-        }
+        background-color: #222;
 
         
-    
-    }
 
-    .taem{
-        position: absolute;
-        top: 240.5%;
-        left: 46.9%;
-         z-index: 3;
-         transform: scale(1.5);
-         transition: 1s;
-         filter: grayscale(1);
+        &.on{
+            // 활성화 클래스인 on클래스가 붙었을 때 
+            opacity: 1;
+            left: 0;
+        }
+        .txt {
+            width: 25%;
+            height: 100%;
 
-        &:hover{
-            filter: none;
+            p {
+                opacity: 1;
+                font: 1.1vw/1.2 "arial";
+                color: #666;
+                margin-bottom: 60px;
+            }
+
+            span {
+                // 커서 포인터가 없으면 마우스가 올라가도 마우스 모양이 변하지 않음
+                cursor: pointer;
+                // ↑ 접근성에 관련된 내용입니다
+                color: orange;
+            }
         }
 
-    
-    }
+        figure {
+            width: 72%;
+            height: 100%;
 
-    .minho{
-        position: absolute;
-        top: 244.1%;
-        left: 58.4%;;
-         z-index: 3;
-         transform: scale(1.5);
-         filter: grayscale(1);
-        transition: 1s;
-        &:hover{
-            filter: none;
+            img {
+                position:absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
-
-        
-     
     }
 
-    .keybum{
-        position: absolute;
-        top: 243%;
-        left: 68%;
-         z-index: 3;
-         transform: scale(1.5);
-         filter: grayscale(1);
-        transition: 1s;
-        &:hover{
-            filter: none;
-        }
-
-       
     }
-
-    &.on{
-        opacity: 1;
-        left: 0;
-    }
-}
-
 

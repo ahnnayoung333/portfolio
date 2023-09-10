@@ -8,8 +8,13 @@
     <script defer src="./script/anime.js"></script>
     <script defer src="./script/main.js"></script>
     <script src="https://kit.fontawesome.com/c12878d3ba.js" crossorigin="anonymous"></script>
+
+
     
 </head>
+
+<body>
+    
 
     <header>
         <div class="inner">
@@ -91,7 +96,7 @@
             </nav>
         </div>
     </header>
-    <figure>
+
         <div id="visual">
             <ul class="panel">
                 <li class="on">
@@ -115,8 +120,9 @@
                 <i class="fa-solid fa-stop"></i>
             </nav>
             <div class="bar"></div>
-        </figure>
-    </div>
+        </div>
+
+  
 
     <figure>
         <h1>BEST CAM</h1>
@@ -177,44 +183,68 @@
         </aside>
     </figure>
 
-    
     <!-- 너무 적나라하게 드러냈나 싶은게
     섹션 아티클 얘네랑 div가 형제요소가 될 수가 없지 않나
      -->
-        <!--누너예 사진 ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
-    <div class="member">
-        <h2>MEMBERS</h2>
-        <!-- <div class="on">
-        <img src="./img/Nu_no_Shinee.png" alt="">
-    </div> -->
-    <div class="onnew">
-        <img src="./img/Nu_on2.png" alt="">
-       
-    </div>
-    <div class="jjong">
-        <img src="./img/Nu_jong2.png" alt="">
-        
-    </div>
-    <div class="taem">
-        <img src="./img/Nu_tae2.png" alt="">
-        
-    </div>
-    <div class="minho">
-        <img src="./img/Nu_min2.png" alt="">
-        
-    </div>
-    <div class="keybum">
-        <img src="./img/Nu_key2.png" alt="">
-        
-    </div>
-</div> 
- 
+        <!--클래스 따로줘서 같이줘봄-->
+<section class="member"> 
+    <div class="mem">
+        <div class="onnew member-info" >
+            <div class="txt">
+                <p>두부온리다는온유</p>
+            </div>
+            <img src="./img/Nu_on2.png" alt="">
+        </div>
 
-    
-    
+        <div class="jjong member-info" >
+            <div class="txt">
+                <p>블링블링이즈종현</p>
+            </div>
+            <img src="./img/Nu_jong2.png" alt="">
+        </div>
+
+        <div class="taem member-info" >
+            <div class="txt">
+                <p>우리박력탬은태민</p>
+            </div>
+            <img src="./img/Nu_tae2.png" alt="">
+        </div>
+
+        <div class="minho member-info" >
+            <div class="txt">
+                <p>불꽃카리스마민호</p>
+            </div>
+            <img src="./img/Nu_min2.png" alt="">
+        </div>
+
+        <div class="key member-info" >
+            <div class="txt">
+                <p>만능열쇠김기밤</p>
+            </div>
+            <img src="./img/Nu_key2.png" alt="">
+        </div>
+        <!-- 나머지 맴버들도 동일한 방법으로 클래스와 data-member 속성을 추가해주세요 -->
+    </div>
+ <!-- 어사이드로해서 나타나게 하고싶은데
+맴버별로 하고싶음 -->
+
+<aside>
+    <div class="txt">
+        <h1>01</h1>
+        <p>클릭하면 내용이 올거임</p>
+        <span>close</span>
+    </div>
+    <figure>
+        <img src="./img/solo_on.jpg" alt="">
+    </figure>
+</aside>
+
+</section>
+ 
+ 
 <section class="community">
     <h2>Title song collection</h2>
-    <div class="inner">
+    <div class="inner2">
         <div class="center_line">
             <a href="#" class="scroll_icon">
                 <i class="fa-solid fa-caret-up"></i>
@@ -343,14 +373,11 @@
                 <!-- <div class="bottom"><a href="#;">Read More</a> -->  
             </section>
         </div>
+    </div>
+</section>
 
         <!-- 푸터만들어야하는데,,, -->
-
-
-        
-
-        
-   
+  
 <!-- 
     ###메뉴) 좀 변경하기(sm배낄생각)####
 피규어) sm배낄생각
@@ -363,26 +390,24 @@
 누르면 설명나오게? 그거 배껴도될듯 아코디언 칸
 
 푸터 -->
-<footer>
+<footer id="footer">
     <div class="inner">
-        <h1>LOGO</h1>
-        <!-- ul>li*4>a[href="#;"] -->
+        <h1>DECODELAB</h1>
         <ul>
-            <li><a href="#;">개인정보취급</a></li>
-            <li><a href="#;">운영정책</a></li>
-            <li><a href="#;">고객센터</a></li>
-            <li><a href="#;">CONTACT US</a></li>
+            <li><a href="#">Policy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Customer</a></li>
+            <li><a href="#">Contact us</a></li>
         </ul>
+
         <address>
-            주소 : 김현주 마음속<br>
-            (주)주현주디테일기획 : 안나영 사업자번호 : 783-87-01686[사업자정보 확인] 대표번호 : 1668-5004
+            address : Lorem ipsum dolor sit amet consectetur. <br />
+            Tel : +82-2-2100-2114 FAX : +82-2-2100-7999
         </address>
-        <p>© 주식회사 요나라 / 아졸려. All Rights Reserved.</p>
+
+        <p>Copyright &copy; 2022 DECODELAB ALL Right reserved.</p>
     </div>
 </footer>
-
-
-
-    
+  
 </body>
 </html>

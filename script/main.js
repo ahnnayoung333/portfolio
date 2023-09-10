@@ -197,40 +197,100 @@ close.addEventListener("click", () => {
 
 //--------------------------------------------------맴버소개
 //그 기업레이아웃도 만들어둔거 왼쪽에 보냈다가 오른쪽으로 꺼낸거니까(아마도)
-//대충 만들고 복붙한다음에 이벤트 줘야하나  
-//고민인게 그거임 하나하나 만들면 효율성 떨어져보이기도하고 은근 노가다인데
-// 사진 쓰는게 너무 적나라함 그래서 다른 사진 갖고온다는건데 좀많이막막하냐
-// &::before {
-//     content: '';
-//     display: block;
-//     width: 80%;
-//     height: 95%;
-//     position: absolute;
-//     top: 0;
-//     left: -200px;
-//     opacity: 0;
-//     background-color: #444;
-//     transition: 1s;
+//div안에 하나씩 어사이드 줄 생각인데 너무 비효율적으로 보이는 느낌이라 고민임
+//일단해보자 ㅠ
 
+// const onnew = document.querySelectorAll(".onnew img");
+// const aside = document.querySelector("aside");
+// const close1 = aside.querySelector("span");
+
+// for (const el of img) {
+//     //이벤트를 이미지한테 준다는 뜻 아님?? 왜 안돼요?...
+// //이미지 눌렀을때
+// el.addEventListener("click",(e)=>{
+
+//     // 클릭한 article(=== e.currentTarget)의 내용(h2, p, video주소)을 변수에 담기
+//     let txt = e.currentTarget.querySelector("p").innerText;
+//     let img = e.currentTarget.querySelector("img").getAttribute("src");
+//     // let vid = e.currentTarget.querySelector("video").getAttribute("src");
+
+//     aside.querySelector("p").innerText = txt;
+//     // aside.querySelector("video").setAttribute("src",vid);
+//     // // setAttribute(얘를, 이것으로) 속성 값을 교체하는 메소드....
+    
+
+//     aside.classList.add("on");
+//     // aside에다가 on붙이기
+//     // classList - 클래스를 핸들링 할 수 있는 목록을 담아놓은 객체 
+//     // (클래스에 손댈 거 있으면 일단 클래스리스트를 쓰면 됨,,, 도라에몽 주머니 느낌)
+//     // -classList 라는 객체는 class에 관련된 모든 메소드들이 담긴 객체 임
+// })
+// }
+
+// //어사이드 나오고
+// //클로즈 누르면 들어가게
+// close1.addEventListener("click",()=>{
+//     aside.classList.remove("on");
+// })
+///////////////////////////////////////지피티에게 나댄 결과
+// const members = document.querySelectorAll(".member-info");
+// const aside = document.querySelector("aside");
+// const asideText = aside.querySelector("p");
+// const asideImage = aside.querySelector("img");
+// const close1 = aside.querySelector("span");
+
+// for (const member of members) {
+//     member.addEventListener("click", (e) => {
+//         // 클릭한 맴버의 데이터 얻기
+//         const memberData = e.currentTarget.getAttribute("data-member");
+
+//         // 어사이드에 해당 맴버의 정보와 이미지 업데이트
+//         switch (memberData) {
+//             case "onew":
+//                 asideText.innerText = "두부온리다는온유";
+//                 asideImage.src = "./img/Nu_on2.png";
+//                 break;
+//             // 나머지 맴버들도 동일한 방법으로 업데이트
+//         }
+
+//         // 어사이드 나타나기
+//         aside.classList.add("on");
+//     });
+// }
+
+// close1.addEventListener("click", () => {
+//     // 어사이드 닫기
+//     aside.classList.remove("on");
+// });
+//-------------------------역사
+
+// let sections = document.querySelectorAll(".row section");
+// let section_arr = Array.from(sections);
+
+// //얘네는 그 스크롤할때 있는 옆에잇는 바 아닌가?.........
+// let liss = document.querySelectorAll("ul li");
+// let lis_arr = Array.from(liss);
+
+
+// let base = 2700;
+// let posArr = [];
+
+// setPos();
+// function setPos(){
+//     for(let el of section_arr){
+//         posArr.push(el.offsetTop);
+//     }
 // }
 
 
-
-
-
-//-------------------------역사
-// let sections = document.querySelectorAll("community");
-// let section_arr = Array.from(.inner);
-// let box3_p = document.querySelector("img");
-
-
+// console.log(posArr);
 
 // window.addEventListener("scroll", ()=>{
 //     let scroll = window.scrollY || window.pageXOffset || document.documentElement.scrollTop;
 
 //     console.log(scroll);
 
-//     box3_p.style.left = `${scroll - posArr[1] - 700}px`;
+    
 
 //     section_arr.map((el, index) => {
 //         if(scroll >= posArr[index] + base ){
@@ -252,3 +312,38 @@ close.addEventListener("click", () => {
 //         window.scrollTo({top: posArr[index], behavior: "smooth"})
 //     })
 // })
+
+let sections = document.querySelectorAll("community section");
+//community 안에 있는 섹션들 모두...라는 뜻
+let section_arr = Array.from(sections);
+
+//li가 작동하면 애들이 작동하는 느낌인데,,, li없이 어떻게 하나요...]
+
+// let base = -300;
+let posArr = [];
+
+setPos();
+function setPos(){
+    for(let el of section_arr){
+        posArr.push(el.offsetTop);
+    }
+}
+window.addEventListener("scroll", ()=>{
+    let scroll = window.scrollY || window.pageXOffset || document.documentElement.scrollTop;
+
+    // console.log(scroll); //시끄러워서 잠깐 끔 작동은 됨ㄴ
+
+    
+
+    section_arr.map((el, index) => {
+        
+            // lis_arr[index].classList.add("on");
+            for(let el of section_arr){
+                el.classList.remove("on")
+            }
+            section_arr[index].classList.add("on");
+        
+    })
+  
+})
+

@@ -1,103 +1,341 @@
-#visual {
+$size : 400px;
+$deg : 50deg;
+
+figure {
     width: 100%;
     height: 100vh;
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
+    background-color: #fff;
+    
+    h1{
+        position: relative;
+        left: 45%;
+        top: 10%;
+        // font-size: 150px;
+        // font-family: "anton";
+        // line-height: 1;
+        font: bold 50px/1 "arial";
+        color: #000;
+        text-shadow: 5px 5px px #000000;
+    }
 
-    .panel {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+    .banner {
+        width: 40%;
+        height: 50%;
+        position: relative;
+        top: 550px;
+        left: 50%;
+        margin-top: calc(-1 * $size / 2.5);
+        margin-left: -350px;
 
-        li {
+        ul {
             width: 100%;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            z-index: 1;
-            transition: opacity 1s;
+            position: relative;
 
-            &.on {
-                opacity: 1;
-                z-index: 2;
+            //li 의 공통스타일
+            li{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.9;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 99999px;
+                transition: 1s;
+
+                h2 {
+                    font: normal 24px/1 "anton";
+                    color: #ccc;
+                    position: absolute;
+                    top: 60%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    // letter-spacing: 2px; //줄간격은 필요 없을듯
+                    transition: 1.5s;
+                }
+
+                .inner {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-repeat: inherit;
+                    //자식요소가 부모의 요소를 상속 받는다는 의미
+                    background-size: inherit;
+                    background-position: inherit;
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: -32%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-image: inherit;
+                        background-repeat: inherit;
+                        // border-radius: 50%;
+                        transition: 1.5s;
+                    }
+
+                    //그림자효과를 before로 넣은것
+                    &::before {
+                        top: -31%;
+                        left: 2%;
+                        filter: blur(20px);
+                        opacity: 0.7;
+                    }
+                }
+
+                a {
+                    display: block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    bottom: 0%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 20px;
+                    opacity: 0;
+                    transition: opacity 1s, bottom 1s, width 0.5s 1s;
+
+                    &::before,
+                    span {
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        top: -400px;
+                        left: 0;
+                        font: 11px/1 "anton";
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        letter-spacing: 2px;
+                        color: #fff;
+                        border-radius: 20px;
+                        background-image: inherit;
+                    }
+
+                    span {
+                       
+                        opacity: 0;
+                        text-indent: -40px; //글자 들여쓰기(-니까 내여쓰기)
+                        transition: 0.5s 1.4s;
+                        //1.4초의 딜레이, 0.5초의 듀레이션
+                    }
+
+                    //버튼의 그림자 효과를 before로 넣은것
+                    &::before {
+                        transform: translateY(120%);
+                        filter: blur(10px) saturate(2);
+                        opacity: 0.8;
+                    }
+                }
             }
 
-            &:nth-of-type(1) {
-                background-image: url(../img/mmainHa.jpg);
-            }
+            //li의 개별 스타일
+            li {
+                &:nth-of-type(1) {
+                    transform: translateY(-100px) translateX(-1600px) scale(0.5);
 
-            &:nth-of-type(2) {
-                background-image: url(../img/mmainJu.jpg);
-            }
+                    //.inner::after - 실제 그림이 보이는 것
+                    //.inner::before그림자효과를 지니고 있는 개체
+                    .inner::after,
+                    .inner::before {
+                        transform:  scale(1);
+                    }
+                }
 
-            &:nth-of-type(3) {
-                background-image: url(../img/mmain10.jpg);
-            }
-            
-            a{
-            position: absolute;
-            left: 10vw;
-            bottom: 250px;
-            height: 50px;
-            color: rgb(238, 238, 238);
-            text-shadow: rgb(9, 1, 24) 9px 8px 3px;
-            font: bold 150px / 1 arial;
+                &:nth-of-type(2) {
+                    transform: translateY(-100px) translateX(-1000px) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform:  scale(1);
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    transform: translateY(-100px) translateX(-600px) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform:  scale(1);
+                    }
+                }
+
+                //활성화 된 패널
+                &:nth-of-type(4) {
+                    opacity: 3;
+                    transform: translateX(0px) scale(1);
+
+                    h2 {
+                        font-size: 110px;
+                        opacity: 0.9;
+                        color: #fff;
+                        text-shadow: 3px 3px 3px #00000060;
+                        top: -30vh;
+                        letter-spacing: 0px;
+                    }
+
+                    // .inner::before,
+                    // .inner::after {
+                    //     transform: rotate($deg * 0);
+                    // }
+
+                    a {
+
+                        opacity: 1;
+                        bottom: -50%;
+                        width: 200px;
+
+                        span {
+                            opacity: 1;
+                            text-indent: 0px;
+                        }
+
+                        &.off {
+                            opacity: 0;
+                            z-index: -9;
+                            display: none;
+                        }
+                    }
+                }
+
+                &:nth-of-type(5) {
+                    transform: translateY(-100px) translateX(600px) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: scale(1);
+                    }
+                }
+
+                &:nth-of-type(6) {
+                    transform: translateY(-100px) translateX(1000px) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform: scale(1);
+                    }
+                }
+
+                &:nth-of-type(7) {
+                    transform: translateY(-100px) translateX(1600px) scale(0.5);
+
+                    .inner::after,
+                    .inner::before {
+                        transform:  scale(1);
+                    }
+                }
+
             }
         }
     }
 
-    nav {
+    .btns1 {
         position: absolute;
-        z-index: 3;
-        bottom: 9vh;
+        bottom: 25%;
         right: 10vw;
         display: flex;
-        gap: 40px;
-        // gap은 flex상황에서만 사용할수 있고, 부모요소에 적용합니다
-        color: #fff;
-        cursor: pointer;
+        gap: 50px;
+        transition: 0.5s;
 
-        i {
-            display: inline-block;
-
-            &.on {
-                color: #222;
-                transform: scale(2);
-            }
-        }
-    }
-
-    .btns {
-        position: absolute;
-        left: 10vw;
-        bottom: 10vh;
-        display: flex;
-        gap: 10px;
-        z-index: 3;
-
-        li {
-            width: 70px;
-            height: 5px;
-            background-color: #fff;
-            transition: 0.5s;
+        div {
             cursor: pointer;
+            width: 120px;
+            height: 36px;
+            // border-radius: 18px;
+            background-color: #999;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 12px/1 "anton";
+            color: #fff;
+            letter-spacing: 4px;
 
-            &.on {
-                width: 150px;
-                background-color: #222;
+            &:hover {
+                background-color: #555;
             }
+        }
+
+        &.off {
+            right: 5vw;
+            opacity: 0;
+            z-index: -3;
         }
     }
 
-    .bar {
-        width: 0%;
-        height: 10px;
-        background-color: rgba(0, 0, 0, 0.5);
+    .pop {
+        width: 50vw;
+        height: 100%;
         position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: 4;
+        top: 0;
+        left: -50vw;
+        // left: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 22vh 5vw 10vh 6vw;
+        transition: 0.5s;
+
+        h2 {
+            font: 12vw/1 "anton";
+            color: #fff;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: 1s 0.3s;
+        }
+
+        p {
+            font: 22px/1.2 "arial";
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: 0.5s 0.8s;
+
+            //nth 타입 그걸로 ..??? 다 따로 하려면 어캐허너
+        }
+
+        .close {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #fff;
+            font: bold 14px/1 "arial";
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+
+            &:hover {
+                background-color: #fff;
+                color: #777;
+            }
+
+        }
+
+        &.on {
+            left: 0;
+
+            h2,
+            p,
+            .close {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
     }
 }
+
